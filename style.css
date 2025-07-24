@@ -1,94 +1,104 @@
-/* style.css */
-
-body {
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f0f0f0;
-  color: auto;
+  transition: background-image 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-  transition: background-image 1s ease-in-out;
 }
 
-.container {
-  width: 400px;
-  max-width: 90vw;
+/* Weather App Container */
+#weatherContainer {
+  width: 100%;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 25px;
-  border-radius: 16px;
-  background-color: #f2f2f2;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
-  transition: all 0.3s ease;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Inner Container */
+.container {
+  padding: 20px;
+}
 
-input {
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Input & Button */
+input[type="text"] {
   padding: 10px;
   width: 70%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
 button {
   padding: 10px 20px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
+button:hover {
+  background-color: #1e40af;
+}
+
+/* Weather Result Box */
 #weatherResult {
-  background-color: rgba(255, 255, 255, 0.85); 
-  padding: 20px 25px;
+  margin-top: 25px;
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  max-width: 400px;
-  margin: 30px auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
   text-align: center;
-  backdrop-filter: blur(8px); 
-  transition: all 0.3s ease-in-out;
 }
 
 #weatherResult h2 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
   margin-bottom: 15px;
-  font-size: 1.6rem;
-  color: #1e3a8a; 
 }
 
 #weatherResult p {
-  margin: 8px 0;
   font-size: 1rem;
-  line-height: 1.4;
+  margin: 8px 0;
 }
 
-#weatherResult:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Main container styles */
-#weatherContainer {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f3f4f6;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Floating widget style */
+/* Floating Widget Mode */
 .floating {
   position: fixed !important;
   bottom: 20px;
   right: 20px;
-  width: 300px !important;
-  height: auto;
+  width: 90vw !important;
+  max-width: 300px;
   z-index: 9999;
+  margin: 0 !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: grab;
 }
 
-/* Toggle mode button */
+/* Toggle Button */
 #toggleModeBtn {
   position: absolute;
   top: 10px;
@@ -102,48 +112,26 @@ button {
   z-index: 10;
 }
 
-/* Responsive tweaks */
-@media screen and (max-width: 600px) {
-  #weatherContainer {
-    width: 90%;
-    margin: 20px auto;
-  }
-
-  .floating {
-    width: 90% !important;
-    bottom: 10px;
-    right: 5%;
-  }
-
-  #toggleModeBtn {
-    padding: 5px 8px;
-    font-size: 14px;
-  }
-}
-.floating {
-  cursor: grab;
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
-  .container {
-    width: 90%;
-    padding: 20px;
+  #weatherContainer {
+    width: 95%;
+    margin: 30px auto;
+    padding: 15px;
   }
 
-  #weatherResult {
-    font-size: 14px;
-    padding: 15px;
+  .container {
+    padding: 10px;
   }
 
   input[type="text"] {
     width: 100%;
     font-size: 16px;
-    padding: 10px;
   }
 
   button {
     width: 100%;
-    padding: 12px;
+    margin-top: 10px;
     font-size: 16px;
   }
 
@@ -151,10 +139,8 @@ button {
     font-size: 24px;
   }
 
-  #toggleMode {
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+  #weatherResult {
+    padding: 15px;
+    font-size: 14px;
   }
 }
