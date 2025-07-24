@@ -8,9 +8,8 @@ A simple and stylish weather application that fetches real-time weather data usi
 
 ## 🔥 Live Demo
 
-[👉 Click here to view the live app](https://your-username.github.io/your-repo-name/)
+[👉 Click here to view the live app](https://kamranmazari1.github.io/Weather-app/)
 
-> *(Replace this link after deployment — instructions below)*
 
 ---
 
@@ -52,7 +51,7 @@ A simple and stylish weather application that fetches real-time weather data usi
 
 ## 🌐 Deployment
 
-This app is deployed using **GitHub Pages**. See instructions below to deploy your own version.
+This app is deployed using **GitHub Pages**.
 
 ---
 
